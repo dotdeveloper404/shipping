@@ -1,52 +1,41 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('auth.layouts.master')
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+@section('title', 'Reset Password')
 
+@section('content')
+<p class="text-center"><a href="{{ route('password.update') }}"><img src="{{ asset('admin/assets/images/logo.png') }}" alt="Logo" width="150px"></a></p>
+<div class="login-wrap animated flipInX">
+    <div class="login-block">
         <form method="POST" action="{{ route('password.update') }}">
             @csrf
-
-            <!-- Password Reset Token -->
             <input type="hidden" name="token" value="{{ $request->route('token') }}">
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
+            <div class="form-group login-input">
+                <i class="fa fa-user overlay"></i>
+                <input type="email" name="email" id="email" class="form-control text-input" placeholder="Email" autocomplete="off" value="{{ old('email', $request->email) }}">
+                @error('email')
+                    <div class="test-white">{{ $message }}</div>
+                @enderror
             </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <label for="password" class="block font-medium text-sm text-gray-700">
-                    {{ __('Password') }}
-                </label>
-
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required />
+            <div class="form-group login-input">
+                <i class="fa fa-key overlay"></i>
+                <input type="password" name="password" id="password" class="form-control text-input" placeholder="Password">
+                @error('password')
+                    <div class="test-white">{{ $message }}</div>
+                @enderror
             </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <label for="password_confirmation" class="block font-medium text-sm text-gray-700">
-                    {{ __('Confirm Password') }}
-                </label>
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                    type="password"
-                                    name="password_confirmation" required />
+            <div class="form-group login-input">
+                <i class="fa fa-key overlay"></i>
+                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control text-input" placeholder="Confirm Password">
+                @error('password_confirmation')
+                    <div class="test-white">{{ $message }}</div>
+                @enderror
             </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Reset Password') }}
-                </x-button>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-info btn-block">Reset Password</button>
+                </div>
             </div>
         </form>
-    </x-auth-card>
-</x-guest-layout>
+    </div>
+</div>
+@endsection

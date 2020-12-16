@@ -1,0 +1,62 @@
+.logo h1 img {
+    width: 100px;
+    height: 50px;
+}
+
+.font-12 {
+    font-size: 12px;
+}
+
+.text-base {
+    color: #41aec4 !important;
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.topbar-left {
+    background-color: #000b24 !important;
+}
+
+.left.side-menu {
+    background-color: #000b24 !important;
+}
+
+#sidebar-menu > ul > li {
+    background-color: #000b24;
+}
+
+#sidebar-menu > ul > li > a.active {
+    background: #41aec5 !important;
+}
+
+#sidebar-menu > ul > li > a.subdrop {
+    background: #41aec5 !important;
+}
+
+#sidebar-menu > ul > li > a:hover {
+    background-color: #2d798a;
+}
+
+#sidebar-menu ul ul {
+    background-color: #01143b !important;
+}
+
+.navbar-form .form-control, 
+.navbar-form .form-control:hover, 
+.navbar-form .form-control:focus {
+    background-color: #000b24 !important;
+}
+
+.navbar-form .form-control::placeholder {
+    color: #f9f9f9 !important;
+}
+
+.profile-info {
+    padding: 20px 12px;
+}
+
+.left.side-menu {
+    min-height: 100vh;
+}

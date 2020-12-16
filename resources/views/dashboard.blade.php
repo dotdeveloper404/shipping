@@ -1,19 +1,105 @@
 @extends('layouts.master')
 
-{{-- <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-</h2>
-</x-slot>
+@section('title', 'Welcome')
 
-<div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 bg-white border-b border-gray-200">
-                You're logged in!
+@section('content')
+<div class="page-heading">
+    <h1><i class='icon-layers'></i> Welcome</h1>
+    <h3>Welcome to {{ config('app.name') }}</h3>
+</div>
+<div class="row top-summary">
+    <div class="col-lg-3 col-md-6">
+        <div class="widget green-1 animated fadeInDown">
+            <div class="widget-content padding">
+                <div class="widget-icon">
+                    <i class="icon-globe-inv"></i>
+                </div>
+                <div class="text-box">
+                    <p class="maindata">TOTAL <b>VISITORS</b></p>
+                    <h2><span class="animate-number" data-value="25153" data-duration="3000">0</span></h2>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="widget-footer">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <i class="fa fa-caret-up rel-change"></i> <b>39%</b> increase in traffic
+                    </div>
+                </div>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>
+
+    <div class="col-lg-3 col-md-6">
+        <div class="widget darkblue-2 animated fadeInDown">
+            <div class="widget-content padding">
+                <div class="widget-icon">
+                    <i class="icon-bag"></i>
+                </div>
+                <div class="text-box">
+                    <p class="maindata">TOTAL <b>SALES</b></p>
+                    <h2><span class="animate-number" data-value="6399" data-duration="3000">0</span></h2>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="widget-footer">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <i class="fa fa-caret-down rel-change"></i> <b>11%</b> decrease in sales
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+        <div class="widget pink-1 animated fadeInDown">
+            <div class="widget-content padding">
+                <div class="widget-icon">
+                    <i class="fa fa-dollar"></i>
+                </div>
+                <div class="text-box">
+                    <p class="maindata">OVERALL <b>INCOME</b></p>
+                    <h2>$<span class="animate-number" data-value="70389" data-duration="3000">0</span></h2>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="widget-footer">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <i class="fa fa-caret-down rel-change"></i> <b>7%</b> decrease in income
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+        <div class="widget lightblue-1 animated fadeInDown">
+            <div class="widget-content padding">
+                <div class="widget-icon">
+                    <i class="fa fa-users"></i>
+                </div>
+                <div class="text-box">
+                    <p class="maindata">TOTAL <b>USERS</b></p>
+                    <h2><span class="animate-number" data-value="18648" data-duration="3000">0</span></h2>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="widget-footer">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <i class="fa fa-caret-up rel-change"></i> <b>6%</b> increase in users
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
 </div>
-</x-app-layout> --}}
+@endsection
