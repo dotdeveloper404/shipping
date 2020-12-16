@@ -27,7 +27,7 @@ return [
     /*
      * Guard.
      */
-    'guard' => '',
+    'guard' => 'web',
 
     /*
      * 2FA verified session var.

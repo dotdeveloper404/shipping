@@ -24,11 +24,12 @@ class LoginSecurityController extends Controller
         $google2fa_url = "";
         $secret_key = "";
 
-        if ($user->loginSecurity->exist()) {
+        if ($user->loginSecurity) {
+            //  dd($user->loginSecurity);
             $google2fa  = (new \PragmaRX\Google2FAQRCode\Google2FA());
             $google2fa_url = $google2fa->getQRCodeInline(
                 'Shipping App',
-                $user->emai,
+                $user->email,
                 $user->loginSecurity->google2fa_secret
             );
             $secret_key = $user->loginSecurity->google2fa_secret;

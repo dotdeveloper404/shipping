@@ -18,6 +18,7 @@ class LoginSecurityMiddleware
     public function handle(Request $request, Closure $next)
     {
         $authenticator = app(Google2FAAuthenticator::class)->boot($request);
+        // dd($authenticator);
         if ($authenticator->isAuthenticated()) {
             return $next($request);
         }

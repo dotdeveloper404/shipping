@@ -1,427 +1,324 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!--
+Template Name: Metronic - Bootstrap 4 HTML, React, Angular 9 & VueJS Admin Dashboard Theme
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: https://1.envato.market/EA4JP
+Renew Support: https://1.envato.market/EA4JP
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<html lang="en">
+<!--begin::Head-->
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="../../../">
+    <meta charset="utf-8" />
+    <title>Login Page 1 | Keenthemes</title>
+    <meta name="description" content="Login page example" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="canonical" href="https://keenthemes.com/metronic" />
 
-    <title>Shipping</title>
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <style>
-        /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-        html {
-            line-height: 1.15;
-            -webkit-text-size-adjust: 100%
-        }
+    <!--begin::Page Custom Styles(used by this page)-->
+    <link href="theme/assets/css/pages/login/login-1.css" rel="stylesheet" type="text/css" />
+    <!--end::Page Custom Styles-->
 
-        body {
-            margin: 0
-        }
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="theme/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="theme/assets/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="theme/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <!--end::Global Theme Styles-->
 
-        a {
-            background-color: transparent
-        }
+    <!--begin::Layout Themes(used by all pages)-->
 
-        [hidden] {
-            display: none
-        }
+    <link href="theme/assets/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+    <link href="theme/assets/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="theme/assets/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+    <link href="theme/assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+    <!--end::Layout Themes-->
 
-        html {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-            line-height: 1.5
-        }
+    <link rel="shortcut icon" href="theme/assets/media/logos/favicon.ico" />
 
-        *,
-        :after,
-        :before {
-            box-sizing: border-box;
-            border: 0 solid #e2e8f0
-        }
-
-        a {
-            color: inherit;
-            text-decoration: inherit
-        }
-
-        svg,
-        video {
-            display: block;
-            vertical-align: middle
-        }
-
-        video {
-            max-width: 100%;
-            height: auto
-        }
-
-        .bg-white {
-            --bg-opacity: 1;
-            background-color: #fff;
-            background-color: rgba(255, 255, 255, var(--bg-opacity))
-        }
-
-        .bg-gray-100 {
-            --bg-opacity: 1;
-            background-color: #f7fafc;
-            background-color: rgba(247, 250, 252, var(--bg-opacity))
-        }
-
-        .border-gray-200 {
-            --border-opacity: 1;
-            border-color: #edf2f7;
-            border-color: rgba(237, 242, 247, var(--border-opacity))
-        }
-
-        .border-t {
-            border-top-width: 1px
-        }
-
-        .flex {
-            display: flex
-        }
-
-        .grid {
-            display: grid
-        }
-
-        .hidden {
-            display: none
-        }
-
-        .items-center {
-            align-items: center
-        }
-
-        .justify-center {
-            justify-content: center
-        }
-
-        .font-semibold {
-            font-weight: 600
-        }
-
-        .h-5 {
-            height: 1.25rem
-        }
-
-        .h-8 {
-            height: 2rem
-        }
-
-        .h-16 {
-            height: 4rem
-        }
-
-        .text-sm {
-            font-size: .875rem
-        }
-
-        .text-lg {
-            font-size: 1.125rem
-        }
-
-        .leading-7 {
-            line-height: 1.75rem
-        }
-
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto
-        }
-
-        .ml-1 {
-            margin-left: .25rem
-        }
-
-        .mt-2 {
-            margin-top: .5rem
-        }
-
-        .mr-2 {
-            margin-right: .5rem
-        }
-
-        .ml-2 {
-            margin-left: .5rem
-        }
-
-        .mt-4 {
-            margin-top: 1rem
-        }
-
-        .ml-4 {
-            margin-left: 1rem
-        }
-
-        .mt-8 {
-            margin-top: 2rem
-        }
-
-        .ml-12 {
-            margin-left: 3rem
-        }
-
-        .-mt-px {
-            margin-top: -1px
-        }
-
-        .max-w-6xl {
-            max-width: 72rem
-        }
-
-        .min-h-screen {
-            min-height: 100vh
-        }
-
-        .overflow-hidden {
-            overflow: hidden
-        }
-
-        .p-6 {
-            padding: 1.5rem
-        }
-
-        .py-4 {
-            padding-top: 1rem;
-            padding-bottom: 1rem
-        }
-
-        .px-6 {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem
-        }
-
-        .pt-8 {
-            padding-top: 2rem
-        }
-
-        .fixed {
-            position: fixed
-        }
-
-        .relative {
-            position: relative
-        }
-
-        .top-0 {
-            top: 0
-        }
-
-        .right-0 {
-            right: 0
-        }
-
-        .shadow {
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06)
-        }
-
-        .text-center {
-            text-align: center
-        }
-
-        .text-gray-200 {
-            --text-opacity: 1;
-            color: #edf2f7;
-            color: rgba(237, 242, 247, var(--text-opacity))
-        }
-
-        .text-gray-300 {
-            --text-opacity: 1;
-            color: #e2e8f0;
-            color: rgba(226, 232, 240, var(--text-opacity))
-        }
-
-        .text-gray-400 {
-            --text-opacity: 1;
-            color: #cbd5e0;
-            color: rgba(203, 213, 224, var(--text-opacity))
-        }
-
-        .text-gray-500 {
-            --text-opacity: 1;
-            color: #a0aec0;
-            color: rgba(160, 174, 192, var(--text-opacity))
-        }
-
-        .text-gray-600 {
-            --text-opacity: 1;
-            color: #718096;
-            color: rgba(113, 128, 150, var(--text-opacity))
-        }
-
-        .text-gray-700 {
-            --text-opacity: 1;
-            color: #4a5568;
-            color: rgba(74, 85, 104, var(--text-opacity))
-        }
-
-        .text-gray-900 {
-            --text-opacity: 1;
-            color: #1a202c;
-            color: rgba(26, 32, 44, var(--text-opacity))
-        }
-
-        .underline {
-            text-decoration: underline
-        }
-
-        .antialiased {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale
-        }
-
-        .w-5 {
-            width: 1.25rem
-        }
-
-        .w-8 {
-            width: 2rem
-        }
-
-        .w-auto {
-            width: auto
-        }
-
-        .grid-cols-1 {
-            grid-template-columns: repeat(1, minmax(0, 1fr))
-        }
-
-        @media (min-width:640px) {
-            .sm\:rounded-lg {
-                border-radius: .5rem
-            }
-
-            .sm\:block {
-                display: block
-            }
-
-            .sm\:items-center {
-                align-items: center
-            }
-
-            .sm\:justify-start {
-                justify-content: flex-start
-            }
-
-            .sm\:justify-between {
-                justify-content: space-between
-            }
-
-            .sm\:h-20 {
-                height: 5rem
-            }
-
-            .sm\:ml-0 {
-                margin-left: 0
-            }
-
-            .sm\:px-6 {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem
-            }
-
-            .sm\:pt-0 {
-                padding-top: 0
-            }
-
-            .sm\:text-left {
-                text-align: left
-            }
-
-            .sm\:text-right {
-                text-align: right
-            }
-        }
-
-        @media (min-width:768px) {
-            .md\:border-t-0 {
-                border-top-width: 0
-            }
-
-            .md\:border-l {
-                border-left-width: 1px
-            }
-
-            .md\:grid-cols-2 {
-                grid-template-columns: repeat(2, minmax(0, 1fr))
-            }
-        }
-
-        @media (min-width:1024px) {
-            .lg\:px-8 {
-                padding-left: 2rem;
-                padding-right: 2rem
-            }
-        }
-
-        @media (prefers-color-scheme:dark) {
-            .dark\:bg-gray-800 {
-                --bg-opacity: 1;
-                background-color: #2d3748;
-                background-color: rgba(45, 55, 72, var(--bg-opacity))
-            }
-
-            .dark\:bg-gray-900 {
-                --bg-opacity: 1;
-                background-color: #1a202c;
-                background-color: rgba(26, 32, 44, var(--bg-opacity))
-            }
-
-            .dark\:border-gray-700 {
-                --border-opacity: 1;
-                border-color: #4a5568;
-                border-color: rgba(74, 85, 104, var(--border-opacity))
-            }
-
-            .dark\:text-white {
-                --text-opacity: 1;
-                color: #fff;
-                color: rgba(255, 255, 255, var(--text-opacity))
-            }
-
-            .dark\:text-gray-400 {
-                --text-opacity: 1;
-                color: #cbd5e0;
-                color: rgba(203, 213, 224, var(--text-opacity))
-            }
-        }
-    </style>
-
-    <style>
-        body {
-            font-family: 'Nunito';
-        }
-    </style>
 </head>
+<!--end::Head-->
 
-<body class="antialiased">
-    <div
-        class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-        @if (Route::has('login'))
-        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-            @auth
-            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-            @else
-            <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+<!--begin::Body-->
 
-            @if (Route::has('register'))
-            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-            @endif
-            @endauth
-        </div>
-        @endif
+<body id="kt_body"
+    class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
 
-        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-            <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                <h2>SHIPPING PORTAL</h2>
+    <!--begin::Main-->
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Login-->
+        <div class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white"
+            id="kt_login">
+            <!--begin::Aside-->
+            <div class="login-aside d-flex flex-column flex-row-auto" style="background-color: #ffff;">
+                <!--begin::Aside Top-->
+                <img style="width: 100%;" src="images/promo.png" />
+                <!--end::Aside Bottom-->
             </div>
+            <!--begin::Aside-->
 
+            <!--begin::Content-->
+            <div
+                class="login-content flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">
+                <!--begin::Content body-->
+                <div class="d-flex flex-column-fluid flex-center">
+                    <!--begin::Signin-->
+                    <div class="login-form login-signin">
+                        <!--begin::Form-->
+                        <form method="POST" action="{{ route('login') }}" class="form" novalidate="novalidate"
+                            id="kt_login_signin_form">
+                            @csrf
+                            <!--begin::Title-->
+                            <div class="pb-13 pt-lg-0 pt-5">
+                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Welcome to
+                                    KL Fullfilment Inc.</h3>
+                                <span class="text-muted font-weight-bold font-size-h4">New Here? <a
+                                        href="{{route('register')}}" id="kt_login_signup"
+                                        class="text-primary font-weight-bolder">Create an
+                                        Account</a></span>
+                            </div>
+                            <!--begin::Title-->
+
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <label class="font-size-h6 font-weight-bolder text-dark">Email</label>
+                                <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="text"
+                                    name="email" autocomplete="off" />
+                            </div>
+                            <!--end::Form group-->
+
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <div class="d-flex justify-content-between mt-n5">
+                                    <label class="font-size-h6 font-weight-bolder text-dark pt-5">Password</label>
+
+                                    <a href="{{ route('password.request') }}"
+                                        class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5"
+                                        id="kt_login_forgot">
+                                        Forgot Password ?
+                                    </a>
+                                </div>
+
+                                <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg"
+                                    type="password" name="password" autocomplete="off" />
+                            </div>
+                            <!--end::Form group-->
+
+                            <!--begin::Action-->
+                            <div class="pb-lg-0 pb-5">
+                                <button type="submit" id="kt_login_signin_submit"
+                                    class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Sign
+                                    In</button>
+
+                            </div>
+                            <!--end::Action-->
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Signin-->
+
+                    <!--begin::Signup-->
+                    <div class="login-form login-signup">
+                        <!--begin::Form-->
+                        <form class="form" novalidate="novalidate" id="kt_login_signup_form">
+                            <!--begin::Title-->
+                            <div class="pb-13 pt-lg-0 pt-5">
+                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Sign Up</h3>
+                                <p class="text-muted font-weight-bold font-size-h4">Enter your details to create your
+                                    account</p>
+                            </div>
+                            <!--end::Title-->
+
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    type="text" placeholder="Fullname" name="fullname" autocomplete="off" />
+                            </div>
+                            <!--end::Form group-->
+
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    type="email" placeholder="Email" name="email" autocomplete="off" />
+                            </div>
+                            <!--end::Form group-->
+
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    type="password" placeholder="Password" name="password" autocomplete="off" />
+                            </div>
+                            <!--end::Form group-->
+
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    type="password" placeholder="Confirm password" name="cpassword"
+                                    autocomplete="off" />
+                            </div>
+                            <!--end::Form group-->
+
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <label class="checkbox mb-0">
+                                    <input type="checkbox" name="agree" />I Agree the <a href="#">terms and
+                                        conditions</a>.
+                                    <span></span>
+                                </label>
+                            </div>
+                            <!--end::Form group-->
+
+                            <!--begin::Form group-->
+                            <div class="form-group d-flex flex-wrap pb-lg-0 pb-3">
+                                <button type="button" id="kt_login_signup_submit"
+                                    class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-4">Submit</button>
+                                <button type="button" id="kt_login_signup_cancel"
+                                    class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3">Cancel</button>
+                            </div>
+                            <!--end::Form group-->
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Signup-->
+
+                    <!--begin::Forgot-->
+                    <div class="login-form login-forgot">
+                        <!--begin::Form-->
+                        <form class="form" novalidate="novalidate" id="kt_login_forgot_form">
+                            <!--begin::Title-->
+                            <div class="pb-13 pt-lg-0 pt-5">
+                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Forgotten Password
+                                    ?</h3>
+                                <p class="text-muted font-weight-bold font-size-h4">Enter your email to reset your
+                                    password</p>
+                            </div>
+                            <!--end::Title-->
+
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    type="email" placeholder="Email" name="email" autocomplete="off" />
+                            </div>
+                            <!--end::Form group-->
+
+                            <!--begin::Form group-->
+                            <div class="form-group d-flex flex-wrap pb-lg-0">
+                                <button type="button" id="kt_login_forgot_submit"
+                                    class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-4">Submit</button>
+                                <button type="button" id="kt_login_forgot_cancel"
+                                    class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3">Cancel</button>
+                            </div>
+                            <!--end::Form group-->
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Forgot-->
+                </div>
+                <!--end::Content body-->
+
+                <!--begin::Content footer-->
+                <div class="d-flex justify-content-lg-start justify-content-center align-items-end py-7 py-lg-0">
+                    <a href="#" class="text-primary font-weight-bolder font-size-h5">Terms</a>
+                    <a href="#" class="text-primary ml-10 font-weight-bolder font-size-h5">Plans</a>
+                    <a href="#" class="text-primary ml-10 font-weight-bolder font-size-h5">Contact Us</a>
+                </div>
+                <!--end::Content footer-->
+            </div>
+            <!--end::Content-->
         </div>
+        <!--end::Login-->
     </div>
+    <!--end::Main-->
+
+
+    <script>
+        var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";
+    </script>
+    <!--begin::Global Config(global config for global JS scripts)-->
+    <script>
+        var KTAppSettings = {
+    "breakpoints": {
+        "sm": 576,
+        "md": 768,
+        "lg": 992,
+        "xl": 1200,
+        "xxl": 1400
+    },
+    "colors": {
+        "theme": {
+            "base": {
+                "white": "#ffffff",
+                "primary": "#3699FF",
+                "secondary": "#E5EAEE",
+                "success": "#1BC5BD",
+                "info": "#8950FC",
+                "warning": "#FFA800",
+                "danger": "#F64E60",
+                "light": "#E4E6EF",
+                "dark": "#181C32"
+            },
+            "light": {
+                "white": "#ffffff",
+                "primary": "#E1F0FF",
+                "secondary": "#EBEDF3",
+                "success": "#C9F7F5",
+                "info": "#EEE5FF",
+                "warning": "#FFF4DE",
+                "danger": "#FFE2E5",
+                "light": "#F3F6F9",
+                "dark": "#D6D6E0"
+            },
+            "inverse": {
+                "white": "#ffffff",
+                "primary": "#ffffff",
+                "secondary": "#3F4254",
+                "success": "#ffffff",
+                "info": "#ffffff",
+                "warning": "#ffffff",
+                "danger": "#ffffff",
+                "light": "#464E5F",
+                "dark": "#ffffff"
+            }
+        },
+        "gray": {
+            "gray-100": "#F3F6F9",
+            "gray-200": "#EBEDF3",
+            "gray-300": "#E4E6EF",
+            "gray-400": "#D1D3E0",
+            "gray-500": "#B5B5C3",
+            "gray-600": "#7E8299",
+            "gray-700": "#5E6278",
+            "gray-800": "#3F4254",
+            "gray-900": "#181C32"
+        }
+    },
+    "font-family": "Poppins"
+};
+    </script>
+    <!--end::Global Config-->
+
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="theme/assets/plugins/global/plugins.bundle.js"></script>
+    <script src="theme/assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
+    <script src="theme/assets/js/scripts.bundle.js"></script>
+    <!--end::Global Theme Bundle-->
+
+
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="theme/assets/js/pages/custom/login/login-general.js"></script>
+    <!--end::Page Scripts-->
 </body>
+<!--end::Body-->
 
 </html>
