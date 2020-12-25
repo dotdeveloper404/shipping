@@ -5,6 +5,9 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoginSecurityController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ProductController;
+use App\Models\ProductCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 Route::group(['prefix' => '2fa'], function () {
     Route::get('/', [LoginSecurityController::class, 'show2faForm']);
     Route::post('/generateSecret',  [LoginSecurityController::class, 'generate2faSecret'])->name('generate2faSecret');
@@ -27,6 +32,10 @@ Route::group(['prefix' => '2fa'], function () {
         return redirect(URL()->previous());
     })->name('2faVerify')->middleware('2fa');
 });
+
+Route::resource('product', ProductController::class);
+Route::resource('category', ProductCategoryController::class);
+
 
 
 Route::post('update_profile', [ProfileController::class, 'update_profile'])->middleware(['auth', '2fa'])->name('profile.update');
