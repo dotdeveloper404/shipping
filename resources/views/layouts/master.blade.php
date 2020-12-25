@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/libs/prettify/github.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style-responsive.css') }}">
+
+    @stack('styles')
+
     <link rel="stylesheet" href="{{ asset('admin/assets/css/custom.css') }}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -127,13 +130,13 @@
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">
+                            <a href="{{ route('order.create') }}">
                                 <i class='icon-layers'></i>
                                 <span>Quick Ship</span>
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">
+                            <a href="{{ route('order.index') }}">
                                 <i class='icon-layers'></i>
                                 <span>Orders</span>
                             </a>
@@ -158,8 +161,8 @@
                                 <span class="pull-right"><i class="fa fa-angle-down"></i></span>
                             </a>
                             <ul>
-                                <li><a href='/product/'><span>Product Catalog</span></a></li>
-                                <li><a href='{{route('category.index')}}'><span>Product Category</span></a></li>
+                                <li><a href="{{ route('product.index') }}"><span>Product Catalog</span></a></li>
+                                <li><a href="{{ route('category.index') }}"><span>Product Category</span></a></li>
                             </ul>
                         </li>
                         <li class='has_sub'>
@@ -254,6 +257,9 @@
     <script src="{{ asset('admin/assets/libs/jquery-icheck/icheck.min.js') }}"></script>
     <script src="{{ asset('admin/assets/libs/prettify/prettify.js') }}"></script>
     <script src="{{ asset('admin/assets/js/init.js') }}"></script>
+
+    @stack('scripts')
+
     <script src="{{ asset('admin/assets/js/custom.js') }}"></script>
 </body>
 

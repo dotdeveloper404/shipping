@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginSecurityController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 use App\Models\ProductCategory;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +37,8 @@ Route::group(['prefix' => '2fa'], function () {
 Route::resource('product', ProductController::class);
 Route::resource('category', ProductCategoryController::class);
 
+
+Route::resource('order', OrderController::class);
 
 
 Route::post('update_profile', [ProfileController::class, 'update_profile'])->middleware(['auth', '2fa'])->name('profile.update');
